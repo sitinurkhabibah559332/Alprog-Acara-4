@@ -1,0 +1,152 @@
+<html>  <!--memulai html-->
+<head>  <!--kepala dokumen html-->
+    <title>DATA KETINGGIAN & JARAK TIAP KECAMATAN DI WONOSOBO ACARA 4 HTML_KHABIBAH</title> <!--judul page yang tampil di website-->
+</head> <!-- menutup kepala dokumen html-->
+<body style="background-color:whitesmoke"></body><!--mengatur warna body website-->
+    <p style="text-align: left; 
+                background-color: hsl(201, 55%, 75%); 
+                padding:8px; width:45px; 
+                border-radius: 10px;">Login</p><!--membuat teks login dengan style rata kiri dan backgroun berwarna hsl(201, 55%, 75%) dan ukuran padding,lebar, dan border seperti pada kode-->
+    <hr> <!--memberi pembatas berupa garis-->
+        <center><img src="Logo Kab.Wonosobo.png" style="width: 20%; height: auto;"></center><!--menambahkan gambar dari folder yang sama dengan style rata tengah,lebar 20% dari layar, dan tiggi menyesuaikan otomatis-->
+    <hr> <!--memberi pembatas berupa garis-->
+    <center><h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">DATA KETINGGIAN & JARAK KE IBUKOTA KABUPATEN MENURUT KECAMATAN</h1></center><!--menambahkan teks rata tengah sebagai header1 dan jenis font sesuai script-->
+    <center><h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">KABUPATEN WONOSOBO</h2> </center><!--menambahkan teks rata tengah sebagai header2 dan jenis font sesuai script-->
+<hr><!--memberi pembatas berupa garis-->
+<p style="text-align: center; 
+                background-color:hsl(201, 55%, 75%);
+                 padding-inline-end: 100%; 
+                 width:100%; 
+                 font-family:Arial, Helvetica, sans-serif">
+                 TINGGI WILAYAH DAN JARAK KE IBUKOTA KABUPATEN MENURUT KECAMATAN TAHUN 2025</p><!--menambahkan teks sepanjang layar dengan script seperti pada script dilengkapi background-->
+<hr><!--memberi pembatas berupa garis-->
+    <style> /*memulai css untuk mengatur style website*/
+        .container{display: flex; 
+                justify-content:Left; 
+                align-items: flex-start; 
+                gap:50px;
+                margin-top: 20px}/*Mengatur layout elemen agar sejajar ke kiri dengan jarak antar elemen 50px*/
+        table{width:100%; 
+                background-color: white; 
+                border-color:rgb(143, 121, 124); 
+                border:2px solid black; 
+                padding:5px; 
+                font-family:Arial, Helvetica, sans-serif}/*Mengatur tabel: lebar 100%, warna latar putih, border hitam 2px, dan font Arial*/
+        th,td{text-align:left; 
+                border:2px solid black;}/*Header dan sel tabel rata kiri dengan garis tepi hitam*/
+        .caption-box{background-color:lightyellow;
+                border:2px solid black;border-radius:20px;text-align:center;margin-top: 20px; font-family:Arial, Helvetica, sans-serif}/*Kotak keterangan dengan latar kuning muda, border hitam, dan teks tengah*/
+        tr:hover{background-color:lightpink}/*Memberi efek warna pink saat kursor diarahkan ke baris tabel*/
+    </style><!--mengakhiri CSS-->
+<div class="caption-box"><!--Membuat kotak keterangan sumber data dengan desain dari class .caption-box-->
+    Data Bersumber Dari Badan Pusat Statistik Kabupaten Wonosobo Tahun 2025
+</div>
+<hr><!--memberi pembatas berupa garis-->
+<input type="text" id="searchInput" placeholder="Cari Kecamatan..." style="margin:15px; padding:5px; width:100%;"><!--Kolom input teks untuk mencari kecamatan di tabel-->
+<script>//Memulai bagian JavaScript untuk interaktivitas//
+//fungsi untuk mencari data di tabel berdasarkan teks yang di-input//
+function searchTable() {
+  const input = document.getElementById("searchInput").value.toLowerCase();//Mengambil nilai input pencarian dan mengubahnya menjadi huruf kecil//
+  const rows = document.querySelectorAll("table tr");//Mengambil semua baris dalam tabel//
+  //Mengecek setiap baris tabel//
+  rows.forEach((row, index) => {
+    if (index === 0) return; // lewati baris header//
+    const kecamatan = row.cells[0].textContent.toLowerCase();//Mengambil teks di kolom pertama//
+    row.style.display = kecamatan.includes(input) ? "" : "none";});}//Menyembunyikan baris jika tidak cocok dengan kata pencarian//
+//Menjalankan fungsi pencarian setiap kali pengguna mengetik//
+document.getElementById("searchInput").addEventListener("keyup", searchTable);
+</script><!--menutup bagian javascript-->
+<body><!--membuka kembali body web-->
+    <div class="container"><!--Wadah utama tabel fleksibel-->
+<table><!--membuka tabel-->
+<!--Baris pertama tabel dengan tiga kolom: Kecamatan, Tinggi Wilayah, dan Jarak ke Ibukota, berwarna rosybrown-->
+<tr>
+<th style="width:40%; background-color:rosybrown; text-align:center;">Kecamatan</th>
+<th style="width:30%; background-color:rosybrown; text-align:center;">Tinggi Wilayah (mdpl)</th>
+<th style="width:30%; background-color:rosybrown; text-align:center;">Jarak ke Ibukota Kabupaten (km)</th>
+</tr>
+<!--memasukkan data pada tabel sesuai data tr utuk menambah baris dan td untuk menambah kolom-->
+<tr>
+    <td>Wadaslintang</td>
+    <td><center>275</center></td>
+    <td><center>37,4</center></td>
+</tr>
+<tr>
+    <td>Kepil</td>
+    <td><center>522</center></td>
+    <td><center>27,3</center></td>
+</tr>
+<tr>
+    <td>Sapuran</td>
+    <td><center>760</center></td>
+    <td><center>19,1</center></td>
+</tr>
+<tr>
+    <td>Kalibawang</td>
+    <td><center>626</center></td>
+    <td><center>28,1</center></td>
+</tr>
+<tr>
+    <td>Kaliwiro</td>
+    <td><center>360</center></td>
+    <td><center>23,5</center></td>
+</tr>
+<tr>
+    <td>Leksono</td>
+    <td><center>512</center></td>
+    <td><center>10,7</center></td>
+</tr>
+<tr>
+    <td>Sukoharjo</td>
+    <td><center>400</center></td>
+    <td><center>19,1</center></td>
+</tr>
+<tr>
+    <td>Selomerto</td>
+    <td><center>640</center></td>
+    <td><center>7,4</center></td>
+</tr>
+<tr>
+    <td>Kalikajar</td>
+    <td><center>815</center></td>
+    <td><center>13,4</center></td>
+</tr>
+<tr>
+    <td>Kertek</td>
+    <td><center>825</center></td>
+    <td><center>11,2</center></td>
+</tr>
+<tr>
+    <td>Wonosobo</td>
+    <td><center>744</center></td>
+    <td><center>2,4</center></td>
+</tr>
+<tr>
+    <td>Watumalang</td>
+    <td><center>910</center></td>
+    <td><center>12,2</center></td>
+</tr>
+<tr>
+    <td>Mojotengah</td>
+    <td><center>860</center></td>
+    <td><center>3,6</center></td>
+</tr>
+<tr>
+    <td>Garung</td>
+    <td><center>1.019</center></td>
+    <td><center>7,9</center></td>
+</tr>
+<tr>
+    <td>Kejajar</td>
+    <td><center>1.378</center></td>
+    <td><center>14,6</center></td>
+</tr>
+</table><!--menutup bagian tabel-->
+</body><!--menutup isi halam-->
+</html> <!--menutup seluruh html-->
+
+
+
+
+
+
